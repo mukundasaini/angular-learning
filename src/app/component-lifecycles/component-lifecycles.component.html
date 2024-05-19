@@ -12,4 +12,43 @@
         <li>ngAfterViewChecked()</li>
         <li>ngOnDestroy()</li>
     </ul>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">ngOnChanges:</h5>
+            <p>Purpose: Respond when Angular sets or resets data-bound input
+                properties. The method receives a SimpleChanges object of
+                current
+                and previous property values.
+            </p>
+            <p>Timing: Called before ngOnInit() (if the component has bound
+                inputs)
+                and whenever one or more data-bound input properties change.
+            </p>
+            <ul>
+                <li>This happens frequently, so any operation you perform here
+                    impacts performance significantly.</li>
+                <li>If your component has no inputs or you use it without
+                    providing any inputs, the framework will not call
+                    ngOnChanges()</li>
+
+            </ul>
+
+            Ex:
+            <pre>
+    ngOnChanges(changes: SimpleChanges) &lbrace;
+        for (const propName in changes) &lbrace;
+          const chng = changes[propName];
+          const cur  = JSON.stringify(chng.currentValue);
+          const prev = JSON.stringify(chng.previousValue);
+          console.log(`$&lbrace;propName&rbrace;: currentValue = $&lbrace;cur&rbrace;, previousValue = $&lbrace;prev&rbrace;`);
+      &rbrace;
+      &rbrace;
+</pre>
+
+
+
+        </div>
+    </div>
+
 </div>
