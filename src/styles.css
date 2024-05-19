@@ -1,0 +1,30 @@
+/* code block css start */
+.cb-at-symbol {
+    color: white;
+}
+
+.cb-interface {
+    color: #4ec9a6;
+}
+
+.cb-paranthesis {
+    color: #ffc914;
+}
+
+.cb-braces {
+    color: #c586b6;
+}
+
+.cb-property {
+    color: #8cdcfe;
+}
+
+.cb-property-value {
+    color: #1f38a1;
+}
+
+.cb-content-value {
+    color: #ce916a;
+}
+
+/* code block css end */

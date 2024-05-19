@@ -1,0 +1,177 @@
+<div>
+    Components is building block of angular application.
+
+    Component consis of
+    <ul>
+        <li>Html file </li>
+        <li>Css file</li>
+        <li>Type script file</li>
+        <li>Testing spec file</li>
+    </ul>
+    Useful links
+    <ul>
+        <li> <a routerLink="/components/" fragment="html-file">Html
+                File</a></li>
+        <li> <a routerLink="/components/" fragment="css-file">Css File</a></li>
+        <li> <a routerLink="/components/" fragment="ts-file">Typescript
+                File</a></li>
+    </ul>
+
+    <section class="card">
+        <div class="card-body">
+            <h5 class="card-title">Compnent Default Decorator:</h5>
+            <pre class="bg-black text-white">                
+<code>
+import &lbrace; Component &rbrace; from '&commat;angular/core';
+
+    &commat;Component(&lbrace;
+   selector:'app-&lt;component-name&gt;',
+   standalone: true,
+   imports: [],
+   templateUrl:'./&lt;component-name&gt;.component.html',
+   styleUrl:'./&lt;component-name&gt;.component.css'
+   &rbrace;) </code>
+
+</pre>
+        </div>
+    </section>
+
+    <section class="card" id="html-file">
+        <div class="card-body">
+            <h5 class="card-title">Html File:</h5>
+            HTML File is either &lt;component-name&gt;.component.html or
+            template content in &commat;Component decorative
+            UI logic is present on HTML file and file path is configured in .ts
+            file<br>
+            Useful links
+            <ul>
+                <li> <a routerLink="/components/" fragment="html-file-link">Link
+                        html example
+                    </a></li>
+                <li> <a routerLink="/components/"
+                        fragment="html-file-internal">Internal
+                        html example</a></li>
+            </ul>
+
+            Ex:
+            <h6 class="card-subtitle mb-2 text-body-secondary">Link html</h6>
+            <pre class="bg-black text-white">
+
+<code> <span class="cb-at-symbol">&commat;</span><span class="cb-interface">Component</span><span class="cb-paranthesis">(</span><span class="cb-braces">&lbrace;</span>
+    <span class="cb-property">templateUrl:</span> <span class="cb-content-value"> './&lt;component-name&gt;.component.html'</span>
+ <span class="cb-braces">&rbrace;</span><span class="cb-paranthesis">)</span></code>
+
+</pre>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Internal html
+                content
+            </h6>
+            <pre class="bg-black text-white">
+
+<code> <span class="cb-at-symbol">&commat;</span><span class="cb-interface">Component</span><span class="cb-paranthesis">(</span><span class="cb-braces">&lbrace;</span>
+    <span class="cb-property">template:</span> <span class="cb-content-value"> '&lt;h3&gt; This is an tempalte attached with component file &lt;/h3&gt;'</span>
+ <span class="cb-braces">&rbrace;</span><span class="cb-paranthesis">)</span></code>
+
+</pre>
+        </div>
+        <section id="html-file-link">
+            <h6 class="card-subtitle mb-2 text-body-secondary">Link html example
+            </h6>
+            <app-html-link></app-html-link>
+        </section>
+        <section id="html-file-internal">
+            <h6 class="card-subtitle mb-2 text-body-secondary">Internal html
+                example
+            </h6>
+            <app-html-internal></app-html-internal>
+        </section>
+
+    </section>
+    <br>
+    <section class="card" id="css-file">
+        <div class="card-body">
+            <h5 class="card-title">Css File:</h5>
+            Css file is for applying styles for current component html content
+
+            Useful links
+            <ul>
+                <li> <a routerLink="/components/" fragment="css-file-link">Link
+                        css example
+                    </a></li>
+                <li> <a routerLink="/components/" fragment="css-file-multiple-link">Multiple Link
+                        css example
+                    </a></li>
+                <li> <a routerLink="/components/"
+                        fragment="css-file-internal">Internal
+                        css example</a></li>
+            </ul>
+
+            Ex:
+            <h6 class="card-subtitle mb-2 text-body-secondary">Link
+                css</h6>
+            <pre class="bg-black text-white">
+
+<code> &commat;Component(&lbrace;
+   styleUrl:'./&lt;component-name&gt;.component.css'
+   &rbrace;) </code>
+
+</pre>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Multiple link css
+            </h6>
+            <pre class="bg-black text-white">
+
+<code> &commat;Component(&lbrace;
+    styleUrls:  ['style1.css', 'style2.css']
+   &rbrace;) </code>
+
+</pre>
+
+            <h6 class="card-subtitle mb-2 text-body-secondary">Inline css
+            </h6>
+            <pre class="bg-black text-white">
+
+<code> &commat;Component(&lbrace;
+    styles: ['span&lbrace;color:red&rbrace;', '.btn-test&lbrace;color:white;background-color:green;&rbrace;']
+ &rbrace;) </code>
+
+</pre>
+
+<section id="css-file-link">
+    <h6 class="card-subtitle mb-2 text-body-secondary">Link css example
+    </h6>
+    <app-css-link></app-css-link>
+</section>
+
+<section id="css-file-multiple-link">
+    <h6 class="card-subtitle mb-2 text-body-secondary">Multiple link css example
+    </h6>
+    <app-css-multiple-link></app-css-multiple-link>
+</section>
+
+<section id="css-file-internal">
+    <h6 class="card-subtitle mb-2 text-body-secondary">Internal css example
+    </h6>
+    <app-css-internal></app-css-internal>
+</section>
+
+        </div>
+    </section>
+    <br>
+    <section class="card" id="ts-file">
+        <div class="card-body">
+            <h5 class="card-title">Typescript File:</h5>
+            Typescript file is for handline css,html and contains business
+            logic.
+            Ex:
+            <h6 class="card-subtitle mb-2 text-body-secondary">Default selector
+                element
+            </h6>
+            <pre class="bg-black text-white">
+
+<code> &commat;Component(&lbrace;
+   selector:'app-component-name'
+   &rbrace;) </code>
+
+</pre>
+        </div>
+    </section>
+</div>

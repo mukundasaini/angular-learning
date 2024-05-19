@@ -1,0 +1,11 @@
+.css-link-class-example{
+    background-color: black;
+    color: white;
+    border: green 5px;
+}
+
+#css-link-id-example{
+    font-style: italic;
+    color: grey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+}

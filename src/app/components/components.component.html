@@ -1,0 +1,16 @@
+<div class="d-lg-flex flex-row" >
+    <nav style="width: 20%;" class="nav flex-lg-column bg-body-tertiary" data-bs-theme="dark">
+        <button class="nav-link text-start"
+            type="button"
+            routerLinkActive="active"
+            aria-current="page" routerLink="/components/"
+            [routerLinkActiveOptions]="{exact:true}">Over View </button>
+        <button class="nav-link text-start" routerLinkActive="active"
+            type="button"
+            routerLink="/components/lifecycles">Life Cycles</button>
+        <button class="nav-link text-start" disabled href="#">Link</button>
+    </nav>
+    <div class="d-flex flex-column p-3">
+        <router-outlet  />
+    </div>
+</div>
