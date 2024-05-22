@@ -1,0 +1,7 @@
+<app-ng-oninit-child (newColorEvent)="onAddColor($event)"></app-ng-oninit-child>
+
+<p>Default colors ngOnInit():</p>
+<ul class="list-group" *ngFor="let color of colorNames;">
+    <li class="list-group-item"
+        [ngStyle]="{'background-color':color}">{{color}}</li>
+</ul>

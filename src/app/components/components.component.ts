@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,6 +8,6 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   templateUrl: './components.component.html',
   styleUrl: './components.component.css'
 })
-export class ComponentsComponent {
+export class ComponentsComponent  {
 
 }

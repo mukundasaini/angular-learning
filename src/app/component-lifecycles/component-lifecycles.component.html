@@ -16,6 +16,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">ngOnChanges:</h5>
+            <p>Interface: OnChanges </p>
             <p>Purpose: Respond when Angular sets or resets data-bound input
                 properties. The method receives a SimpleChanges object of
                 current
@@ -31,7 +32,6 @@
                 <li>If your component has no inputs or you use it without
                     providing any inputs, the framework will not call
                     ngOnChanges()</li>
-
             </ul>
 
             Ex:
@@ -46,7 +46,63 @@
       &rbrace;
 </pre>
 
+            <div>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                    ngOnChanges Example
+                </h6>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputName"
+                            class="form-label">Name</label>
+                        <input type="text" class="form-control"
+                            id="exampleInputName" aria-describedby="nameHelp"
+                            [(ngModel)]="name" name="name" />
+                        <div id="nameHelp" class="form-text">Type somthing in
+                            text box to see onChanges logs in below box</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"
+                        (click)="onClearName()">Clear</button>
+                    Click on clear to see previous value
+                </form>
+                <br>
+                <app-ng-onchanges [typedName]="name"></app-ng-onchanges>
+            </div>
 
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">ngInit:</h5>
+            <p>Interface: OnInit </p>
+            <p>Purpose: Initialize the directive or component after Angular
+                first displays the data-bound properties and sets the directive
+                or component's input properties
+            </p>
+            <p>Timing: Called once, after the first ngOnChanges(). ngOnInit() is
+                still called even when ngOnChanges() is not (which is the case
+                when there are no template-bound inputs).
+            </p>
+
+            Ex:
+            <pre>
+      colorNames: string[] = [];
+
+      ngOnInit(): void &lbrace;
+        this.colorNames.push("Black");
+        this.colorNames.push("White");
+        this.colorNames.push("Yellow");
+        this.colorNames.push("Red");
+        &rbrace;
+
+</pre>
+
+            <div>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                    ngOnInit Example
+                </h6>
+                <app-ng-oninit></app-ng-oninit>
+            </div>
 
         </div>
     </div>
