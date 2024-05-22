@@ -1,0 +1,12 @@
+<form>
+    <div class="mb-3">
+        <label for="exampleInputName"
+            class="form-label">Color Name</label>
+        <input type="text" class="form-control"
+            id="exampleInputName" 
+            [(ngModel)]="color" name="color" />
+    </div>
+    <button type="submit" class="btn btn-primary"
+        (click)="onAddColor()">Add</button>
+    Click on add to see new color ngOnChanges()
+</form>
