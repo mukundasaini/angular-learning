@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DirectivesComponent } from './directives.component';
+import { DefaultSelectorComponent } from './default-selector.component';
 
-describe('DirectivesComponent', () => {
-  let component: DirectivesComponent;
-  let fixture: ComponentFixture<DirectivesComponent>;
+describe('DefaultSelectorComponent', () => {
+  let component: DefaultSelectorComponent;
+  let fixture: ComponentFixture<DefaultSelectorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DirectivesComponent]
+      imports: [DefaultSelectorComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DirectivesComponent);
+    fixture = TestBed.createComponent(DefaultSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

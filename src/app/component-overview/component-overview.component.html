@@ -9,13 +9,7 @@
         <li>Testing spec file</li>
     </ul>
     Useful links
-    <ul>
-        <li> <a routerLink="/components/" fragment="html-file">Html
-                File</a></li>
-        <li> <a routerLink="/components/" fragment="css-file">Css File</a></li>
-        <li> <a routerLink="/components/" fragment="ts-file">Typescript
-                File</a></li>
-    </ul>
+    <app-fragment-utility [linkDetails]="mainLinks"></app-fragment-utility>
 
     <section class="card">
         <div class="card-body">
@@ -44,14 +38,8 @@ import &lbrace; Component &rbrace; from '&commat;angular/core';
             UI logic is present on HTML file and file path is configured in .ts
             file<br>
             Useful links
-            <ul>
-                <li> <a routerLink="/components/" fragment="html-file-link">Link
-                        html example
-                    </a></li>
-                <li> <a routerLink="/components/"
-                        fragment="html-file-internal">Internal
-                        html example</a></li>
-            </ul>
+            <app-fragment-utility
+                [linkDetails]="htmlLinks"></app-fragment-utility>
 
             Ex:
             <h6 class="card-subtitle mb-2 text-body-secondary">Link html</h6>
@@ -93,17 +81,8 @@ import &lbrace; Component &rbrace; from '&commat;angular/core';
             Css file is for applying styles for current component html content
 
             Useful links
-            <ul>
-                <li> <a routerLink="/components/" fragment="css-file-link">Link
-                        css example
-                    </a></li>
-                <li> <a routerLink="/components/" fragment="css-file-multiple-link">Multiple Link
-                        css example
-                    </a></li>
-                <li> <a routerLink="/components/"
-                        fragment="css-file-internal">Internal
-                        css example</a></li>
-            </ul>
+            <app-fragment-utility
+                [linkDetails]="cssLinks"></app-fragment-utility>
 
             Ex:
             <h6 class="card-subtitle mb-2 text-body-secondary">Link
@@ -135,23 +114,26 @@ import &lbrace; Component &rbrace; from '&commat;angular/core';
 
 </pre>
 
-<section id="css-file-link">
-    <h6 class="card-subtitle mb-2 text-body-secondary">Link css example
-    </h6>
-    <app-css-link></app-css-link>
-</section>
+            <section id="css-file-link">
+                <h6 class="card-subtitle mb-2 text-body-secondary">Link css
+                    example
+                </h6>
+                <app-css-link></app-css-link>
+            </section>
 
-<section id="css-file-multiple-link">
-    <h6 class="card-subtitle mb-2 text-body-secondary">Multiple link css example
-    </h6>
-    <app-css-multiple-link></app-css-multiple-link>
-</section>
+            <section id="css-file-multiple-link">
+                <h6 class="card-subtitle mb-2 text-body-secondary">Multiple link
+                    css example
+                </h6>
+                <app-css-multiple-link></app-css-multiple-link>
+            </section>
 
-<section id="css-file-internal">
-    <h6 class="card-subtitle mb-2 text-body-secondary">Internal css example
-    </h6>
-    <app-css-internal></app-css-internal>
-</section>
+            <section id="css-file-internal">
+                <h6 class="card-subtitle mb-2 text-body-secondary">Internal css
+                    example
+                </h6>
+                <app-css-internal></app-css-internal>
+            </section>
 
         </div>
     </section>
@@ -161,10 +143,15 @@ import &lbrace; Component &rbrace; from '&commat;angular/core';
             <h5 class="card-title">Typescript File:</h5>
             Typescript file is for handline css,html and contains business
             logic.
+
             Ex:
             <h6 class="card-subtitle mb-2 text-body-secondary">Default selector
                 element
             </h6>
+            <p class="card-text">app prefix will add to your component names
+                as slector defaultly
+                When generate component using ng command like ng generate
+                component 'component-name'</p>
             <pre class="bg-black text-white">
 
 <code> &commat;Component(&lbrace;
@@ -172,6 +159,132 @@ import &lbrace; Component &rbrace; from '&commat;angular/core';
    &rbrace;) </code>
 
 </pre>
+
+            <h6 class="card-subtitle mb-2 text-body-secondary">User Defined
+                Selector
+            </h6>
+            <p class="card-text"> You can give your name to selector in the
+                component there is no rule like class name or filename should be
+                same as selector name</p>
+            <pre class="bg-black text-white">
+
+<code> &commat;Component(&lbrace;
+selector:'user-defined'
+&rbrace;) </code>
+
+</pre>
+
+            <h6 class="card-subtitle mb-2 text-body-secondary"> Selector In
+                Template
+            </h6>
+            <pre class="bg-black text-white">
+
+<code> &commat;Component(&lbrace;
+selector: 'app-selector-in-template',
+  standalone: true,
+  imports:[UserDefinedSelectorComponent],
+  template: `<span>Selector in another component template example</span><br/>&lt;user-defined/&gt;`
+  &rbrace;) 
+</code>
+</pre>
+
+            <h6 class="card-subtitle mb-2 text-body-secondary"> Attribute
+                Selector
+            </h6>
+            <pre class="bg-black text-white">
+
+<code> &commat;Component(&lbrace;
+selector: 'app-selector-in-template',
+standalone: true,
+imports:[UserDefinedSelectorComponent],
+template: `<span>Selector in another component template example</span><br/>&lt;user-defined/&gt;`
+&rbrace;) 
+</code>
+</pre>
+            <section id="default-selector-link">
+                <h6 class="card-subtitle mb-2 text-body-secondary">Default
+                    Selector
+                    Example
+                </h6>
+                <app-default-selector></app-default-selector>
+            </section>
+
+            <section id="userdefined-selector-link">
+                <h6 class="card-subtitle mb-2 text-body-secondary">User Defined
+                    Selector
+                    Example
+                </h6>
+                <user-defined></user-defined>
+            </section>
+
+            <section id="selector-in-template-link">
+                <h6 class="card-subtitle mb-2 text-body-secondary">Selector In
+                    Template Example
+                    Example
+                </h6>
+                <app-selector-in-template></app-selector-in-template>
+            </section>
+
+            <section id="selector-in-template-link">
+                <h6 class="card-subtitle mb-2 text-body-secondary">Attribute
+                    Selector Example
+                </h6>
+                <div style="height: 150px;">
+                    <div circle-card [cardContentId]="'input value'">
+                        see circle-card.component.ts
+                        file for understanding
+                    </div>
+                </div>
+            </section>
+            <section id="selector-in-template-link">
+                <h6 class="card-subtitle mb-2 text-body-secondary">class
+                    Selector Example
+                </h6>
+                <div >
+                    <div class="class-selector-example">
+                        see class-selector.component.ts file for understanding
+                    </div>
+                </div>
+            </section>
+            <section id="selector-in-template-link">
+                <h6 class="card-subtitle mb-2 text-body-secondary">Component as
+                    Attribute, Tag and class
+                    Selector Example
+                </h6>
+                <div>
+                    <app-tac-selector class="bg-light">
+                        This is component as tag selector example
+                    </app-tac-selector>
+                    <div app-tac-selector class="bg-gradient">
+                        This is component as attribute selector example
+                    </div>
+                    <div class="app-tac-selector" >
+                        This is component as class selector example
+                    </div>
+                </div>
+            </section>
+
+            <section id="selector-in-template-link">
+                <h6 class="card-subtitle mb-2 text-body-secondary"> Combine Tag and Attribute selector
+                </h6>
+                <div>
+                   <combine-selector type="reset">Example</combine-selector>
+                   <button pseudo-selectors>Example 2</button>
+
+                </div>
+            </section>
+
+            <section id="selector-in-template-link">
+                <h6 class="card-subtitle mb-2 text-body-secondary"> Avoid attribute and class selector to element
+                </h6>
+                <div>
+                    <div pseudo-selectors></div>
+                    <button pseudo-selectors>Pseudo not work for button</button>
+                </div>
+            </section>
+
         </div>
     </section>
+    <br>
+
 </div>

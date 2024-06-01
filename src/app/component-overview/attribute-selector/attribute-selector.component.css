@@ -1,0 +1,12 @@
+.circle {
+    border-radius: 60%;
+    border-style:solid;
+    border-width: 1.5px;
+    border-color: lightgray;
+    background-color: white;
+    min-width: 96px;
+    min-height: 96px;
+    position:absolute;
+    z-index: 100;
+    align-content: center;
+}

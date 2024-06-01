@@ -2,18 +2,10 @@
 
     Compnent Lifecycles are
 
-    <ul>
-        <li>ngOnChanges()</li>
-        <li>ngOnInit()</li>
-        <li>ngDoCheck()</li>
-        <li>ngAfterContentInit()</li>
-        <li>ngAfterContentChecked()</li>
-        <li>ngAfterViewInit()</li>
-        <li>ngAfterViewChecked()</li>
-        <li>ngOnDestroy()</li>
-    </ul>
+    <app-fragment-utility
+                [linkDetails]="mainLinks"></app-fragment-utility>
 
-    <div class="card">
+    <div class="card" id="ngOnChanges">
         <div class="card-body">
             <h5 class="card-title">ngOnChanges:</h5>
             <p>Interface: OnChanges </p>
@@ -67,11 +59,12 @@
                 <br>
                 <app-ng-onchanges [typedName]="name"></app-ng-onchanges>
             </div>
-
+            <app-fragment-utility
+            [linkDetails]="mainLinks"></app-fragment-utility>
         </div>
     </div>
     <br>
-    <div class="card">
+    <div class="card" id="ngOnInit">
         <div class="card-body">
             <h5 class="card-title">ngInit:</h5>
             <p>Interface: OnInit </p>
@@ -103,7 +96,49 @@
                 </h6>
                 <app-ng-oninit></app-ng-oninit>
             </div>
+            <app-fragment-utility
+            [linkDetails]="mainLinks"></app-fragment-utility>
+        </div>
+    </div>
+    <br>
+    <div class="card" id="ngDoCheck">
+        <div class="card-body">
+            <h5 class="card-title">ngDoCheck:</h5>
+            <p>Interface: DoCheck </p>
+            <p>Purpose: Detect and act upon changes that Angular can't or won't detect on its own.
+            </p>
+            <p>Timing: Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run.
+            </p>
 
+            Ex:
+            <pre>
+                ngDoCheck(): void &lbrace;
+                    this.logName = `currentValue = $&lbrace;this.currentValue&rbrace;, previousValue = $&lbrace;this.previousValue&rbrace;`;
+                    &rbrace;
+
+</pre>
+
+            <div>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                    ngDoCheck Example
+                </h6>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputName"
+                            class="form-label">Name</label>
+                        <input type="text" class="form-control"
+                            id="exampleInputName" aria-describedby="nameHelp"
+                            [(ngModel)]="nameExample" name="nameExample" />
+                        <div id="nameHelp" class="form-text">Type somthing in
+                            text box to see onChanges logs in below box</div>
+                    </div>
+                </form>
+                <br>
+                <app-ng-docheck [typedNameDoCheckExample]="nameExample"></app-ng-docheck>
+            </div>
+            <app-fragment-utility
+                [linkDetails]="mainLinks"></app-fragment-utility>
+        
         </div>
     </div>
 

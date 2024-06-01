@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let f of linkDetails.linkDetails;">
+        <a [routerLink]="linkDetails.routerLink"
+            [fragment]="f.fragment">{{f.linkText}}</a></li>
+</ul>

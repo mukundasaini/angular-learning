@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TemplatesComponent } from './templates.component';
+import { TacSelectorComponent } from './tac-selector.component';
 
-describe('TemplatesComponent', () => {
-  let component: TemplatesComponent;
-  let fixture: ComponentFixture<TemplatesComponent>;
+describe('TacSelectorComponent', () => {
+  let component: TacSelectorComponent;
+  let fixture: ComponentFixture<TacSelectorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TemplatesComponent]
+      imports: [TacSelectorComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(TemplatesComponent);
+    fixture = TestBed.createComponent(TacSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

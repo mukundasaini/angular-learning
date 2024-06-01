@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgOninitChildComponent } from "../ng-oninit-child/ng-oninit-child.component";
 
 @Component({
@@ -9,7 +9,8 @@ import { NgOninitChildComponent } from "../ng-oninit-child/ng-oninit-child.compo
   styleUrl: './ng-oninit.component.css',
   imports: [CommonModule, NgOninitChildComponent]
 })
-export class NgOninitComponent implements OnInit {
+export class NgOninitComponent implements OnInit, OnDestroy {
+
   colorNames: string[] = [];
 
   ngOnInit(): void {
@@ -19,6 +20,10 @@ export class NgOninitComponent implements OnInit {
 
   onAddColor(color: string) {
     this.colorNames.push(color);
+  }
+
+  ngOnDestroy(): void {
+    this.colorNames = [];
   }
 
 }

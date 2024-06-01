@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WelcomeComponent } from './welcome.component';
+import { PseudoSelectorsComponent } from './pseudo-selectors.component';
 
-describe('WelcomeComponent', () => {
-  let component: WelcomeComponent;
-  let fixture: ComponentFixture<WelcomeComponent>;
+describe('PseudoSelectorsComponent', () => {
+  let component: PseudoSelectorsComponent;
+  let fixture: ComponentFixture<PseudoSelectorsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WelcomeComponent]
+      imports: [PseudoSelectorsComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(WelcomeComponent);
+    fixture = TestBed.createComponent(PseudoSelectorsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
